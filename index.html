@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watch Suggestions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>What should I watch?</h1>
+      <p class="tagline">Suggest a movie or show. Upvote what you'd like me to actually watch.</p>
+    </header>
+
+    <section class="suggest-box">
+      <div class="search-wrap">
+        <input
+          id="search"
+          type="text"
+          placeholder="Search a movie or TV show…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <ul id="results" class="results" hidden></ul>
+      </div>
+
+      <div id="picked" class="picked" hidden>
+        <img id="picked-poster" alt="" />
+        <div class="picked-meta">
+          <strong id="picked-title"></strong>
+          <span id="picked-year" class="muted"></span>
+          <p id="picked-overview" class="muted"></p>
+        </div>
+        <button id="picked-clear" class="link-btn" type="button">change</button>
+      </div>
+
+      <input id="name" type="text" placeholder="Your name (optional)" maxlength="40" />
+
+      <button id="submit" type="button" disabled>Suggest it</button>
+      <p id="submit-msg" class="msg" hidden></p>
+    </section>
+
+    <section class="list-section">
+      <div class="list-header">
+        <h2>Suggestions</h2>
+        <div class="sort">
+          <button class="sort-btn active" data-sort="votes" type="button">Top</button>
+          <button class="sort-btn" data-sort="new" type="button">New</button>
+        </div>
+      </div>
+      <ul id="suggestions" class="suggestions"></ul>
+      <p id="empty" class="muted" hidden>No suggestions yet. Be the first.</p>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
